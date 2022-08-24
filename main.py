@@ -4,6 +4,7 @@
 import pandas as pd
 from tkinter import *
 from Untitled import country_name
+rate = pd.read_csv("country_name.csv")
 
 window = Tk()
 window.title("Currency Converter")
@@ -24,11 +25,45 @@ label3 = Label(text="TO\n(serial number)", font=("Arial", 20, "bold"))
 label3.place(x=500, y=250)
 
 
+def spinbox_used_form():
+    # gets the current value in spinbox.
+    global rate
+    index = int(spinbox_from.get())
+    print(rate['1.00 USD'][index])
+    label4.config(text=f"{rate['US Dollar'][index]}", font=("Arial", 20, "bold"))
 
 
+spinbox_from = Spinbox(from_=0, to=52, width=15, command=spinbox_used_form)
+spinbox_from.place(x=350, y=257)
 
 
+def calculate():
+    index = spinbox_from.get()
 
+
+def spinbox_used_to():
+    # gets the current value in spinbox.
+    global rate
+    index = int(spinbox_to.get())
+    print(rate['US Dollar'][index])
+    label5.config(text=f"{rate['US Dollar'][index]}", font=("Arial", 20, "bold"))
+
+
+spinbox_to = Spinbox(from_=0, to=52, width=15, command=spinbox_used_to)
+spinbox_to.place(x=630, y=257)
+
+label4 = Label(text=f"{rate['US Dollar'][0]}", font=("Arial", 20, "bold"))
+label4.place(x=250, y=350)
+#
+label5 = Label(text=f"{rate['US Dollar'][0]}", font=("Arial", 20, "bold"))
+label5.place(x=580, y=350)
+
+amount_from = Text(height=1, width=20)
+# Puts cursor in textbox.
+amount_from.focus()
+# Adds some text to begin with.
+amount_from.insert(END, "Enter the Amount ")
+amount_from.place(x=250, y=400)
 
 
 
