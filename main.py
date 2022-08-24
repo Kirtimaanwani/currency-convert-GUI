@@ -3,16 +3,33 @@
 # print(data)
 import pandas as pd
 from tkinter import *
+from Untitled import country_name
 
 window = Tk()
 window.title("Currency Converter")
 window.minsize(width=900, height=600)
-window.config(padx=50, pady=100)
+window.config(padx=50, pady=10)
 
-rates = pd.read_csv("country_name.csv")
 
-country = Label(text="Countries", font=("Arial", 25, "bold"))
-country.grid(row=0, column=0)
+label1 = Label(text="COUNTRIES", font=("Arial", 10, "bold"))
+label1.grid(row=0, column=0)
+country = Label(text=country_name, font=("Arial", 7, "bold"))
+country.grid(row=1, column=0)
+
+
+label2 = Label(text="FROM\n(serial number)", font=("Arial", 20, "bold"))
+label2.place(x=200, y=250)
+#
+label3 = Label(text="TO\n(serial number)", font=("Arial", 20, "bold"))
+label3.place(x=500, y=250)
+
+
+
+
+
+
+
+
 
 
 
