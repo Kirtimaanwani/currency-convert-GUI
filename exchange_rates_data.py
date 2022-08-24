@@ -11,6 +11,6 @@ import pandas as pd
 
 url = 'https://www.x-rates.com/table/?from=USD&amount=1'
 response = requests.get(url).content
-data = pd.read_html(response)
-
-print(data[-1])
+raw_data = pd.read_html(response)
+data = raw_data[-1]
+print(data)
