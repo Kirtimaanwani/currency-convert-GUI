@@ -14,3 +14,5 @@ response = requests.get(url).content
 raw_data = pd.read_html(response)
 data = raw_data[-1]
 print(data)
+
+data.to_csv("country_name.csv")
