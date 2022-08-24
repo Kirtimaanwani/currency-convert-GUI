@@ -37,8 +37,15 @@ spinbox_from = Spinbox(from_=0, to=52, width=15, command=spinbox_used_form)
 spinbox_from.place(x=350, y=257)
 
 
-def calculate():
-    index = spinbox_from.get()
+def convert():
+    global rate
+    amount = float(amount_from.get())
+    from_rate = float(rate['inv. 1.00 USD'][int(spinbox_from.get())])
+    to_rate = float(rate['inv. 1.00 USD'][int(spinbox_to.get())])
+
+    final = (amount * from_rate)/to_rate
+    converted.config(text=f"{round(final, 2)}", font=("Arial", 20, "bold"))
+
 
 
 def spinbox_used_to():
@@ -58,62 +65,19 @@ label4.place(x=250, y=350)
 label5 = Label(text=f"{rate['US Dollar'][0]}", font=("Arial", 20, "bold"))
 label5.place(x=580, y=350)
 
-amount_from = Text(height=1, width=20)
+amount_from = Entry()
 # Puts cursor in textbox.
-amount_from.focus()
+# amount_from.focus()
 # Adds some text to begin with.
-amount_from.insert(END, "Enter the Amount ")
-amount_from.place(x=250, y=400)
+# amount_from.insert(END, "Enter the Amount ")
+amount_from.place(x=255, y=410)
+
+converted = Label(text="0", font=("Arial", 20, "bold"))
+converted.place(x=580, y=400)
 
 
-
-
-
-# # ------------------------------FROM------------------------------------------
-# label_from = Label(text="FROM", font=("Arial", 25, "bold"))
-# label_from.grid(row=0, column=0)
-#
-# choice_from = None
-#
-#
-# def listbox_used_from(event):
-#     # Gets current selection from listbox
-#     global choice_from
-#     choice_from = listbox_from.get(listbox_from.curselection())
-#     # print("45852")
-#
-#
-# listbox_from = Listbox(height=4)
-# fruits = ["Apple", "Pear", "Orange", "Banana"]
-# for item in fruits:
-#     listbox_from.insert(fruits.index(item), item)
-# listbox_from.bind("<<ListboxSelect>>", listbox_used_from)
-# listbox_from.grid(row=1, column=0)
-#
-# label = Label(text="text", font=("Arial", 22, "bold"))
-# label.grid(row=0, column=2)
-# # -------------------------------TO---------------------------
-#
-# label_from = Label(text="TO", font=("Arial", 25, "bold"))
-# label_from.grid(row=0, column=4)
-#
-# choice_to = None
-#
-#
-# def listbox_used_to(event):
-#     # Gets current selection from listbox
-#     global choice_to
-#     choice_to = listbox_to.get(listbox_to.curselection())
-#
-#
-# listbox_to = Listbox(height=4)
-# fruits = ["Apple", "Pear", "Orange", "Banana"]
-# for item in fruits:
-#     listbox_to.insert(fruits.index(item), item)
-# listbox_to.bind("<<ListboxSelect>>", listbox_used_to)
-# listbox_to.grid(row=1, column=4)
-
-# -------------------------------------------------------------
+calculate = Button(text="CONVERT", command=convert, bg="red", font=("Arial", 10, "bold"))
+calculate.place(x=460, y=410)
 
 
 window.mainloop()
