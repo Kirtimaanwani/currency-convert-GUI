@@ -30,7 +30,7 @@ Next
 pip install -r requirements.txt
 ```
 
-Running files in terminal
+Run files in terminal
 ```
 python run_this_first_to_get_latest_exchange_rates.py
 ```
