@@ -21,11 +21,11 @@ conda create -p venv python==3.8 -y
 ```
 conda activate venv/
 ```
-<if already environment exists>
+If already environment exists
 ```
 conda activate venv/
 ```
-
+Next
 ```
 pip install -r requirements.txt
 ```
