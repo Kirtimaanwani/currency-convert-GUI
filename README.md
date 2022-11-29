@@ -42,5 +42,5 @@ OR
 
 ### 2
 ```
-bash start_GUI.py
+bash start_GUI.sh
 ```
