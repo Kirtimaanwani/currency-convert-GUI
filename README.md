@@ -13,6 +13,7 @@ cd currency-convert-GUI
 ```
 
 
+### 1
 Creating conda environment
 ```
 conda create -p venv python==3.8 -y
@@ -37,3 +38,9 @@ python run_this_first_to_get_latest_exchange_rates.py
 python main.py
 ```
 
+OR
+
+### 2
+```
+bash start_GUI.py
+```
