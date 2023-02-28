@@ -33,6 +33,9 @@ def spinbox_used_form():
     label4.config(text=f"{rate['US Dollar'][index]}", font=("Arial", 20, "bold"))
 
 
+    
+    
+    
 spinbox_from = Spinbox(from_=0, to=52, width=15, command=spinbox_used_form)
 spinbox_from.place(x=350, y=257)
 
