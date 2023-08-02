@@ -45,6 +45,3 @@ OR
 bash start_GUI.sh
 ```
 
-
-
-
